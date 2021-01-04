@@ -29,7 +29,7 @@ node {
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
-        docker.withRegistry('http://localhost:8081/repository/kobalti/', 'myNexus') {
+        docker.withRegistry('http://localhost:8081/repository/kobalti/', 'fa504b2e-f3b5-41d6-bb08-2a506e57d411') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
