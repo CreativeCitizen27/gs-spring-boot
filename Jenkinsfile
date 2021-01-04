@@ -24,7 +24,9 @@ node {
             app.push("latest")
         }*/
 
-        app.push()
-        app.push("latest")
+        docker.withRegistry('https://hub.docker.com/v2/repositories/kobalti/mydocker/', 'kobalti-docker') {
+            app.push()
+            app.push("latest")
+        }
     }
 }
