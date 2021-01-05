@@ -11,7 +11,7 @@ node {
          * docker build on the command line */
 
         //app = docker.build("getintodevops/hellonode")
-        app = docker.build("test:0.3")
+        app = docker.build("kobalti/mydocker:0.5")
     }
 
     stage('Push image') {
@@ -24,9 +24,9 @@ node {
             app.push("latest")
         }*/
 
-        docker.withRegistry('https://hub.docker.com/v2/repositories/kobalti/mydocker/', 'kobalti-docker') {
+        //docker.withRegistry('https://hub.docker.com/v2/repositories/kobalti/mydocker/', 'kobalti-docker') {
             app.push()
             app.push("latest")
-        }
+        //}
     }
 }
